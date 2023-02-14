@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Campera",
+        "price": 9230.45,
+        "thumbnail": "https://cdn1.iconfinder.com/data/icons/fashion-135/128/hoodie_sweatshirt_shirt_fashion_clothing-512.png",
+        "id": 1
+    },
+    {
+        "title": "Remera",
+        "price": 456.0,
+        "thumbnail": "https://cdn1.iconfinder.com/data/icons/fashion-135/128/tshirt_male_clothes_shirt_fashion-512.png",
+        "id": 2
+    },
+    {
+        "title": "Notebook",
+        "price": 200000.0,
+        "thumbnail": "https://cdn1.iconfinder.com/data/icons/office-material-5/128/laptop_laptops._laptop_computer_computer_computing-512.png",
+        "id": 3
+    },
+    {
+        "title": "Auto",
+        "price": 5000000.0,
+        "thumbnail": "https://cdn1.iconfinder.com/data/icons/transportation-395/128/car_vehicle_transportation_cars_travel-512.png",
+        "id": 4
+    },
+    {
+        "title": "Pelota",
+        "price": 1230.45,
+        "thumbnail": "https://cdn2.iconfinder.com/data/icons/sports-257/128/basketball_ball_basket_sportive_basketball_ball-512.png",
+        "id": 5
+    },
+    {
+        "title": "Jean",
+        "price": 8123.45,
+        "thumbnail": "https://cdn1.iconfinder.com/data/icons/fashion-135/128/jeans_pants_fashion_clothes-512.png",
+        "id": 6
+    },
+    {
+        "title": "Helicoptero",
+        "price": 40000000,
+        "thumbnail": "https://cdn1.iconfinder.com/data/icons/transportation-395/128/helicopter_transport_transportation_travel_chopper-512.png",
+        "id": 7
+    },
+    {
+        "title": "Escuadra",
+        "price": 123.45,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+        "id": 8
+    },
+    {
+        "title": "Calculadora",
+        "price": 234.56,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
+        "id": 9
+    },
+    {
+        "title": "Globo Terráqueo",
+        "price": 345.67,
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
+        "id": 10
+    }
+]
