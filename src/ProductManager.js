@@ -11,7 +11,7 @@ export default class ProductManager {
     try {
       this.products = await this.getAll()
       this.products.push(obj)
-      products = await promises.writeFile(this.ruta,JSON.stringify(this.products, null, '\t'))
+      await promises.writeFile(this.ruta,JSON.stringify(this.products, null, '\t'))
     } catch (error) {
       console.log(error);
       return [];

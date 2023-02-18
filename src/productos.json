@@ -38,5 +38,25 @@
 		"price": 9230.45,
 		"thumbnail": "https://cdn1.iconfinder.com/data/icons/fashion-135/128/hoodie_sweatshirt_shirt_fashion_clothing-512.png",
 		"id": 8
+	},
+	{
+		"title": "Campera",
+		"description": "de cuero",
+		"code": 123,
+		"status": true,
+		"stock": 10555,
+		"price": 9230.45,
+		"thumbnail": "https://cdn1.iconfinder.com/data/icons/fashion-135/128/hoodie_sweatshirt_shirt_fashion_clothing-512.png",
+		"id": 10
+	},
+	{
+		"title": "Campera",
+		"description": "de cuero",
+		"code": 123,
+		"status": true,
+		"stock": 10555,
+		"price": 9230.45,
+		"thumbnail": "https://cdn1.iconfinder.com/data/icons/fashion-135/128/hoodie_sweatshirt_shirt_fashion_clothing-512.png",
+		"id": 11
 	}
 ]
