@@ -4,10 +4,18 @@ export default class ProductManager {
 
   constructor(ruta) {
     this.ruta = ruta;
+    this.products = [];
   }
 
   async save(obj) {
-    
+    try {
+      this.products = await this.getAll()
+      this.products.push(obj)
+      products = await promises.writeFile(this.ruta,JSON.stringify(this.products, null, '\t'))
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
   }
 
   async getById(id) {
@@ -33,7 +41,37 @@ export default class ProductManager {
   }
 
   async deleteById(id) {
-    
+    try {
+        let i=-1
+        this.products = await this.getAll()
+        i = this.products.findIndex(e=>e.id==id)
+        if(i!=-1){
+          this.products.splice(i,1)
+          await promises.writeFile(this.ruta,JSON.stringify(this.products, null, '\t'))
+          return true
+      }else 
+          return false
+    } catch (error) {
+        console.log(error);
+        return [];
+  }
+  }
+
+  async modifyById(id,obj) {
+    try {
+        let i=-1
+        this.products = await this.getAll()
+        i = this.products.findIndex(e=>e.id==id)
+        if(i!=-1){
+            this.products[i]=obj
+            await promises.writeFile(this.ruta,JSON.stringify(this.products, null, '\t'))
+            return true
+        }else 
+            return false
+    } catch (error) {
+        console.log(error)
+        return false
+  }
   }
 
   async deleteAll() {
