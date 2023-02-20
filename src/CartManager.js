@@ -26,20 +26,26 @@ export default class ProductManager {
             if(this.carts.indexOf(cid) == -1){ //si no existe en el carrito
                 //console.log(this.carts.indexOf(cid))
                 //console.log(this.carts[cid-1])
-                
-                const product =[]
+
+                let id=-1
                 if (this.carts.length === 0) {
-                    const id = 1;
+                    id = 1;
                 } else {
-                    const id = this.carts[this.carts.length - 1].id + 1;
+                    id = this.carts[this.carts.length - 1].id + 1;
                 }
-                product.id=pid
-                product.amount=1
+
+                const product={
+                    id : pid,
+                    amount : 1
+                }
+
+
                 const cart = {
-                    id: -1,
-                    products: product
+                    id: id,
+                    products: []
                   }
                 cart.id=id
+                cart.products.push(product)
                 this.carts.push(cart)
             }else{ // si existe en el carrito
                 this.carts[this.carts.indexOf(cid)].products.amount++
