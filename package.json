@@ -1,20 +1,24 @@
 {
-  "name": "desafio3",
+  "name": "backend-ecommerce",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "application.js": "^1.5.2",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
-    "socket.io": "^4.6.1"
+    "express.js": "^1.0.0",
+    "hbs": "^4.2.0",
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.6.1",
+    "view.js": "^4.1.0"
   },
   "devDependencies": {
     "handlebars": "^4.7.7"

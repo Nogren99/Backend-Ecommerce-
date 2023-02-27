@@ -9,11 +9,19 @@ import viewsRouter from './routes/views.router.js'
 const app = express();
 
 app.engine('handlebars',handlebars.engine());
-app.set('views',`${__dirname}/views`)
-app.set('view engine','handlebars ')
+app.set('views',`${__dirname}/views`);//especificamos el directorio donde estan nuestras vistas
+app.set('view engine','handlebars')
 
+app.use(express.static(`${__dirname}/public`))
 
-
+/*
+app.get('/',(req,res)=>{
+    let testUser={
+        name:"jime tqm :)",
+        lastName:"testLN"
+    }
+    res.render('index',testUser)
+})*/
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
