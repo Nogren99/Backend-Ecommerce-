@@ -4,6 +4,8 @@ import productsRouter from './routes/products.router.js'
 import cartRouter from './routes/cart.router.js'
 import __dirname from './utils.js';
 import viewsRouter from './routes/views.router.js'
+import realTimeRouter from './routes/realTime.router.js'
+import { Server } from 'socket.io';
 
 
 const app = express();
@@ -27,7 +29,21 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/api/products',productsRouter);
 app.use('/api/carts',cartRouter);
+app.use('/realtimeproducts',realTimeRouter)
 app.use('/',viewsRouter)
 
 
-app.listen(8080,()=>console.log("Listening on 8080"))
+const server = app.listen(8080,()=>console.log("Listening on 8080"))
+
+const io = new Server(server)
+
+const logs = [];
+
+io.on('connection', socket => {
+    console.log('Connected');
+    socket.on('productMessage', data => {
+        logs.push({producto: data});
+        io.emit('log', {logs});
+    })
+});
+

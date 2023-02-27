@@ -10,6 +10,24 @@ const dirname = path.dirname(filename);
 const productManager = new ProductManager(path.join(dirname, '../productos.json'));
 
 
+router.get('/', async(req, res) => {
+    console.log('k')
+
+    const product = await productManager.getAll()
+
+    res.render('index',{
+        
+        product : product
+    });
+});
+
+
+export default router
+
+
+
+/*
+
 const users = []
 const food = [
     {name: 'Pizza', price: 10.12},
@@ -19,7 +37,7 @@ const food = [
     {name: 'Sandia', price: 15.12},
     {name: 'Sandia', price: 15.12},
 ]
-/*
+
 router.get('/', (req, res) => {
     console.log('k')
 
@@ -43,20 +61,3 @@ router.get('/', (req, res) => {
 });
 */
 
-router.get('/', async(req, res) => {
-    console.log('k')
-
-    const product = await productManager.getAll()
-
-    res.render('index',{
-        
-        product : product
-    });
-    //const random = Math.floor(Math.random()*users.length);
-    
-    //res.render('users', users[random]);
-    //res.render('register');
-});
-
-
-export default router

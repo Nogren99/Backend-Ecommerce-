@@ -1,0 +1,49 @@
+<div>
+    <p>Trabajando con websockets</p>
+    
+    <h1>Productos tiempo real</h1>
+    <h2>Ingrese producto a mostrar:</h2>
+
+    <input id="textbox">
+    <div>
+        <h4 id="log"></h4>
+    </div>
+    
+
+     <div>
+    {{#each product}}
+        <div>
+            <h4>Producto: {{title}}</h4>
+            
+        </div>
+    {{/each}}
+    </div>
+
+   
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/products.js"></script>
+
+<!-- 
+    <form action="/" method="post" id="productform">
+        <label>Producto</label>
+        <input name="Producto">
+        <label>Descripcion</label>
+        <input name="Descripcion">
+        <label>code</label>
+        <input name="code">
+        <label>Estado</label>
+        <input name="Estado">
+        <label>Stock</label>
+        <input name="Stock">
+        <input type="submit">
+    </form>
+    
+    <p>Descripcion:{{description}}</p>
+    <p>code: {{code}}</p>
+    <p>Estado: {{stats}}</p>
+    <p>Stock:{{stok}}</p>
+    <p>Price:{{price}}</p>
+    <p>Id:{{id}}</p>
+
+ -->
