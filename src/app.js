@@ -6,6 +6,9 @@ import __dirname from './utils.js';
 import viewsRouter from './routes/views.router.js'
 import realTimeRouter from './routes/realTime.router.js'
 import { Server } from 'socket.io';
+import ProductManager from './ProductManager.js';
+import path from 'path'
+
 
 
 const app = express();
@@ -38,11 +41,16 @@ const server = app.listen(8080,()=>console.log("Listening on 8080"))
 const io = new Server(server)
 
 const logs = [];
-
 io.on('connection', socket => {
     console.log('Connected');
-    socket.on('productMessage', data => {
-        logs.push({producto: data});
+    const productManager = new ProductManager(path.join(__dirname, './productos.json'));
+    socket.on('productMessage', async(data) => {
+        //console.log(data)
+        await productManager.save(data)
+        //let prods = await productManager.getAll()
+        //console.log(prods)
+        logs.push(data);
+        console.log(logs.length)
         io.emit('log', {logs});
     })
 });

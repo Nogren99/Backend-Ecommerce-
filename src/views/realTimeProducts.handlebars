@@ -4,17 +4,36 @@
     <h1>Productos tiempo real</h1>
     <h2>Ingrese producto a mostrar:</h2>
 
-    <input id="textbox">
-    
     <div>
-        <h4 id="log"></h4>
+        <form id="form" >
+        <label>Producto</label>
+        <input id="Producto" required>
+        <label>Descripcion</label>
+        <input id="Descripcion"required>
+        <label>code</label>
+        <input id="code"required>
+        <label>Estado</label>
+        <input id="Estado"required>
+        <label>Stock</label>
+        <input id="Stock"required>
+        <label>Price</label>
+        <input id="Price"required>
+        <input type="submit">
+    </form>
     </div>
     
 
+    <p id="log"></p>
      <div>
     {{#each product}}
         <div>
-            <h4>Producto: {{title}}</h4>
+            <p>Producto: {{title}}</p>
+            <p>Descripcion: {{description}}</p>
+            <p>code: {{code}}</p>
+            <p>Estado: {{stats}}</p>
+            <p>Stock: {{stok}}</p>
+            <p>Price: {{price}}</p>
+            <p>Id: {{id}}</p>
         </div>
     {{/each}}
     </div>
@@ -25,19 +44,7 @@
 <script src="/js/products.js"></script>
 
 <!-- 
-    <form action="/" method="post" id="productform">
-        <label>Producto</label>
-        <input name="Producto">
-        <label>Descripcion</label>
-        <input name="Descripcion">
-        <label>code</label>
-        <input name="code">
-        <label>Estado</label>
-        <input name="Estado">
-        <label>Stock</label>
-        <input name="Stock">
-        <input type="submit">
-    </form>
+   
     
     <p>Descripcion:{{description}}</p>
     <p>code: {{code}}</p>
