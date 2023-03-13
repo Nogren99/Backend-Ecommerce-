@@ -8,6 +8,8 @@ import realTimeRouter from './routes/realTime.router.js'
 import { Server } from 'socket.io';
 import ProductManager from './ProductManager.js';
 import path from 'path'
+import mongoose from 'mongoose';
+
 
 
 
@@ -19,14 +21,7 @@ app.set('view engine','handlebars')
 
 app.use(express.static(`${__dirname}/public`))
 
-/*
-app.get('/',(req,res)=>{
-    let testUser={
-        name:"jime tqm :)",
-        lastName:"testLN"
-    }
-    res.render('index',testUser)
-})*/
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -34,6 +29,11 @@ app.use('/api/products',productsRouter);
 app.use('/api/carts',cartRouter);
 app.use('/realtimeproducts',realTimeRouter)
 app.use('/',viewsRouter)
+try{
+    await mongoose.connect('mongodb+srv://nogren23:Zvfs1X97w9j42Hny@cluster0.tw7ltq8.mongodb.net/?retryWrites=true&w=majority')
+}catch(error){
+    console.log('error database')
+}
 
 
 const server = app.listen(8080,()=>console.log("Listening on 8080"))
@@ -54,4 +54,6 @@ io.on('connection', socket => {
         io.emit('log', {logs});
     })
 });
+
+app.set('socketio',io);
 

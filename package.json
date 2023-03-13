@@ -16,6 +16,7 @@
     "express-handlebars": "^6.0.7",
     "express.js": "^1.0.0",
     "hbs": "^4.2.0",
+    "mongoose": "^7.0.1",
     "nodemon": "^2.0.20",
     "socket.io": "^4.6.1",
     "view.js": "^4.1.0"
