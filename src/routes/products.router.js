@@ -1,22 +1,23 @@
 import {Router} from 'express';
-import path from 'path'
-import { fileURLToPath } from 'url';
-import { productModel } from '../models/products.model.js';
-import ProductManager from '../ProductManager.js';
+//import path from 'path'
+//import { fileURLToPath } from 'url';
+import { productModel } from '../dao/models/products.model.js';
+//import ProductManager from '../ProductManager.js';
+import Products from '../dao/dbManagers/products.js'
 
-
+const productManager = new Products();
 const router = Router();
-const filename = fileURLToPath(import.meta.url);
-const dirname = path.dirname(filename);
-const productManager = new ProductManager(path.join(dirname, '../productos.json'));
+//const filename = fileURLToPath(import.meta.url);
+//const dirname = path.dirname(filename);
+//const productManager = new ProductManager(path.join(dirname, '../productos.json'));
 
 
 
 
 router.get('/', async (req, res) =>{
     try{
-        const prods =await productModel.find();
-        res.setDefaultEncoding({result:'sucess',payload:users})
+        const products =await productManager.getAll();
+        res.send({status:'success',payload:products})
     }catch(error){
         console.log(error);
         res.status(500).send({error})
@@ -55,7 +56,7 @@ router.post('/', async(req, res) =>{
     }
 
     try{
-        const result = await productModel.create({
+        const result = await productManager.save({
             title,
             description,
             code,
@@ -65,7 +66,7 @@ router.post('/', async(req, res) =>{
             thumbnail,
             id
         })
-        res.send({result:'sucess',payload:result})
+        res.send({result:'success',payload:result})
     }catch(error){
         console.log('post error')
         res.status(500).send({error})

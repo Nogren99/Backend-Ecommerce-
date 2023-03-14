@@ -2,18 +2,21 @@ import {Router} from 'express';
 import path from 'path'
 import { fileURLToPath } from 'url';
 import CartManager from '../CartManager.js';
+import carts from '../dao/dbManagers/carts.js';
 
+const cartManager = new carts();
 const router = Router();
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-const cartManager = new CartManager(path.join(dirname, '../cart.json'));
+//const cartManager = new CartManager(path.join(dirname, '../cart.json'));
 
 router.get('/', async (req, res) => {
-    
-    const products = await cartManager.getAll();
-
-    res.send(products)
-
+    try{
+        const carts = await cartManager.getAll();
+        res.send({status:'sucess',payload:courses});
+    }catch(error){
+        res.status(500).send({error});
+    }
 })
 
 router.get('/:cid', async(req, res) => {
@@ -25,6 +28,19 @@ router.get('/:cid', async(req, res) => {
         return res.send(producto);
 });
 
+router.post('/', async(req, res) =>{
+    const {products} = req.body
+    try{
+        const result = await productManager.save({
+            products
+        })
+        res.send({result:'sucess',payload:result})
+    }catch(error){
+        console.log('post error')
+        res.status(500).send({error})
+    }
+})
+/*
 router.post('/', async(req, res) => {
     const cartProd = req.body;
 
@@ -35,7 +51,7 @@ router.post('/', async(req, res) => {
     await cartManager.save(cartProd)
 
     res.send({status: 'sucess', message: 'Product created'});
-});
+});*/
 
 
 router.post('/:cid/product/:pid', async(req, res) => {
