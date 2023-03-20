@@ -4,11 +4,17 @@ const cartCollection = 'carts'
 
 const cartSchema = new mongoose.Schema({
 
-    title:{
-        products:{
-            type:Array,
-            default:[]
-        }
+
+    products:{
+        type:[
+            {
+                product:{
+                    type:mongoose.Schema.Types.ObjectId,
+                    ref:'products'
+                }
+            }
+        ],
+        default:[] // por si no se envia el anterior parametro
     }
 })
 

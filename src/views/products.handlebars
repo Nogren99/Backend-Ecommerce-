@@ -3,15 +3,15 @@
 </div>
 
 <div>
-    {{#each products}}
+    {{#each products.docs}}
         <div>
-            <h2>{{title}}</h2>
-            <p>Descripcion:{{this.description}}</p>
-            <p>code: {{this.code}}</p>
-            <p>Estado: {{this.stats}}</p>
+            <h2>{{this}}</h2>
+            <p>Descripcion:{{description}}</p>
+            <p>code: {{'code'}}</p>
+            <p>Estado: {{"this.stats"}}</p>
             <p>Stock:{{this.stock}}</p>
             <p>Price:{{this.price}}</p>
-            <p>Id:{{this.id}}</p>
+            <p>Id:</p>
         </div>
     {{/each}}
 </div>

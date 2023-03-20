@@ -15,9 +15,30 @@ const router = Router();
 
 
 router.get('/', async (req, res) =>{
+    let { limit, page, sort , query } = req.query;
+    let price=0
+
     try{
-        const products =await productManager.getAll();
-        res.send({status:'success',payload:products})
+        console.log("SI")
+
+        if(!limit){limit=10}
+        if(!page){page=1}
+
+
+        //console.log(limit+" "+ page)
+        
+        if(sort=='desc'){
+            price=-1
+        }else if (sort=='asc'){
+            price=1
+        }
+
+        let products = await productModel.paginate({status:true},
+            {limit: limit,
+            page: page,
+            sort : {price: price}
+        })
+        res.render('products', { products });
     }catch(error){
         console.log(error);
         res.status(500).send({error})
@@ -145,7 +166,7 @@ router.delete('/:id', async(req, res) => {
     }
 })*/
 
-
+/*
 
 //Ruta /products/:pid tipo app.get donde llamamos al metodo getById
 router.get('/:pid', async(req, res) => {
@@ -156,12 +177,12 @@ router.get('/:pid', async(req, res) => {
         return res.send(producto);
 });
 
+*/
 
-
-//Ejmplo de async await llamado a la clase ProductMnager
+/*Ejmplo de async await llamado a la clase ProductMnager
 router.get('/', async (req,res)=> {
     const products = await productManager.getAll();
     res.send({products});
-})
+})*/
 
 export default router;

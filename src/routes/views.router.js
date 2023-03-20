@@ -18,8 +18,6 @@ const router = Router();
 
 
 router.get('/', async(req, res) => {
-    console.log('k')
-
     const products = await productManager.getAll()
     console.log(products)
     res.render('products', { products });
