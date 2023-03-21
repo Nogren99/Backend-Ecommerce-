@@ -6,25 +6,12 @@ const productCollection = 'products';
 
 const productSchema = new mongoose.Schema({
 
-    title: {
-        type:String,
-        unique:true
-    },
+    title:String,
     description:String,
-    code:{
-        type:Number,
-        unique:true
-    },
+    code:Number,
     status:Boolean,
-        
-    stock:{
-        type:Number,
-        unique:true
-    },
-    price:{
-        type:Number,
-        unique:true
-    },
+    stock:Number,
+    price:Number,
     thumbnail:String,
     carts:{
         type:Array,

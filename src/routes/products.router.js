@@ -1,17 +1,9 @@
 import {Router} from 'express';
-//import path from 'path'
-//import { fileURLToPath } from 'url';
 import { productModel } from '../dao/models/products.model.js';
-//import ProductManager from '../ProductManager.js';
 import Products from '../dao/dbManagers/products.js'
 
 const productManager = new Products();
 const router = Router();
-//const filename = fileURLToPath(import.meta.url);
-//const dirname = path.dirname(filename);
-//const productManager = new ProductManager(path.join(dirname, '../productos.json'));
-
-
 
 
 router.get('/', async (req, res) =>{
@@ -19,12 +11,8 @@ router.get('/', async (req, res) =>{
     let price=0
 
     try{
-        console.log("SI")
-
         if(!limit){limit=10}
         if(!page){page=1}
-
-
         //console.log(limit+" "+ page)
         
         if(sort=='desc'){
@@ -47,32 +35,10 @@ router.get('/', async (req, res) =>{
 
 
 
-
-/*
-router.get('/', async (req, res) => {
-    
-    const products = await productManager.getAll();
-    const limit = Number(req.query.limit);
-    //para varios querys const {limit, query2,etc} = req.query
-    
-    let auxProd = []
-    
-    if (!limit)
-        res.send(products);
-    else{
-        for(let i=0;i<=limit-1;i++)
-            if(products[i]!=null)
-                auxProd.push(products[i])
-        console.log(auxProd)
-        res.send(auxProd)
-    }
-})*/
-
-
 router.post('/', async(req, res) =>{
-    const {title,description,code,status,stock,price,thumbnail,id} = req.body
+    const {title,description,code,status,stock,price,thumbnail} = req.body
 
-    if(!title || !description || !code || !status || !stock || !price || !thumbnail || !id){
+    if(!title || !description || !code || !status || !stock || !price || !thumbnail){
         return res.status(400).send({error:'incomplete values'})
     }
 
@@ -84,8 +50,7 @@ router.post('/', async(req, res) =>{
             status,
             stock,
             price,
-            thumbnail,
-            id
+            thumbnail
         })
         res.send({result:'success',payload:result})
     }catch(error){
@@ -94,19 +59,6 @@ router.post('/', async(req, res) =>{
     }
 })
 
-
-/*
-router.post('/', async(req, res) => {
-    const product = req.body;
-
-    if(!product.title ) {
-        return res.status(400).send({status: 'error', message: 'Incomplete values'});
-    }
-
-    const producto = await productManager.save(product)
-
-    res.send({status: 'sucess', message: 'Product created'});
-});*/
 
 
 router.put('/:id', async(req, res) => {
@@ -127,19 +79,6 @@ router.put('/:id', async(req, res) => {
     }
 })
 
-/*
-router.put('/:id', async(req, res) => {
-    const product = req.body;
-    const prodId = Number(req.params.id);
-    const newProd = { id: prodId, ...product }
-    if(!await productManager.modifyById(prodId,newProd)) 
-        res.status(404).send({status: 'error', message: 'User not found'});
-    else
-        res.send({status: 'sucess', message: 'User updated'});
-
-
-});*/
-
 
 router.delete('/:id', async(req, res) => {
 
@@ -156,7 +95,70 @@ router.delete('/:id', async(req, res) => {
     }
 })
 
+
+export default router;
+
+
+
+
 /*
+
+METODOS PERTENECIENTES AL SISTEMA DE PERSISTENCIA MEDIANTE ARCHIVOS
+
+//import path from 'path'
+//import { fileURLToPath } from 'url';
+//import ProductManager from '../ProductManager.js';
+
+//const filename = fileURLToPath(import.meta.url);
+//const dirname = path.dirname(filename);
+//const productManager = new ProductManager(path.join(dirname, '../productos.json'));
+
+
+
+router.get('/', async (req, res) => {
+    
+    const products = await productManager.getAll();
+    const limit = Number(req.query.limit);
+    //para varios querys const {limit, query2,etc} = req.query
+    
+    let auxProd = []
+    
+    if (!limit)
+        res.send(products);
+    else{
+        for(let i=0;i<=limit-1;i++)
+            if(products[i]!=null)
+                auxProd.push(products[i])
+        console.log(auxProd)
+        res.send(auxProd)
+    }
+})
+
+router.post('/', async(req, res) => {
+    const product = req.body;
+
+    if(!product.title ) {
+        return res.status(400).send({status: 'error', message: 'Incomplete values'});
+    }
+
+    const producto = await productManager.save(product)
+
+    res.send({status: 'sucess', message: 'Product created'});
+});
+
+router.put('/:id', async(req, res) => {
+    const product = req.body;
+    const prodId = Number(req.params.id);
+    const newProd = { id: prodId, ...product }
+    if(!await productManager.modifyById(prodId,newProd)) 
+        res.status(404).send({status: 'error', message: 'User not found'});
+    else
+        res.send({status: 'sucess', message: 'User updated'});
+
+
+});
+
+
 router.delete('/:id', async(req, res) => {
     const prodId = Number(req.params.id);
      if (await productManager.deleteById(prodId)) {
@@ -164,9 +166,7 @@ router.delete('/:id', async(req, res) => {
     } else {
         res.status(404).send({status: 'error', message: 'User not found'});
     }
-})*/
-
-/*
+})
 
 //Ruta /products/:pid tipo app.get donde llamamos al metodo getById
 router.get('/:pid', async(req, res) => {
@@ -177,12 +177,10 @@ router.get('/:pid', async(req, res) => {
         return res.send(producto);
 });
 
-*/
-
-/*Ejmplo de async await llamado a la clase ProductMnager
+Ejmplo de async await llamado a la clase ProductMnager
 router.get('/', async (req,res)=> {
     const products = await productManager.getAll();
     res.send({products});
-})*/
+})
 
-export default router;
+*/
