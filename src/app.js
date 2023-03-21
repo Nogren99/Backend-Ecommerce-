@@ -13,18 +13,12 @@ import { cartModel } from './dao/models/carts.model.js';
 import { productModel } from './dao/models/products.model.js';
 
 
-
-
-
 const app = express();
 
 app.engine('handlebars',handlebars.engine());
 app.set('views',`${__dirname}/views`);//especificamos el directorio donde estan nuestras vistas
 app.set('view engine','handlebars')
-
 app.use(express.static(`${__dirname}/public`))
-
-
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -46,22 +40,22 @@ try{
     })*/
 
 
-    /* BUSCO CARRITO, LE AGREGO UN PRODUCTO Y LO ACTUALIZO
-    const cart = await cartModel.findOne({_id:'6416620572b88a56f02c9cdf'})
-    cart.products.push({product:'64166287fe5a3f23287346dc'})
-    const result = await cartModel.updateOne({_id:'6416620572b88a56f02c9cdf'},cart)
-    console.log(result)
+    // BUSCO CARRITO, LE AGREGO UN PRODUCTO Y LO ACTUALIZO
+    //const cart = await cartModel.findOne({_id:'6419373beb87c29d5ca9857c'})
+    //cart.products.push({product:'640fd97c3ad3eac894edc1da'})
+    //const result = await cartModel.updateOne({_id:'6419373beb87c29d5ca9857c'},cart)
+    //console.log(result)
     //const response = await cartModel.find()
     //console.log(JSON.stringify(response, null,'\t'))
-    */
+    
 
-    const response = await cartModel.find().populate('products.product')
+    //const response = await cartModel.find().populate('products.product')
     //console.log(JSON.stringify(response, null,'\t'))
 
 
     //PAGINATE
 
-    const productsA = await productModel.paginate({status:true},{limit:5 , page:1})
+    //const productsA = await productModel.paginate({status:true},{limit:5 , page:1})
     //console.log(JSON.stringify(productsA,null,'\t'))
 
 }catch(error){
