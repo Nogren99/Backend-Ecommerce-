@@ -1,21 +1,31 @@
 <div>
+    <h1>Bienvenido!</h1>
+    <p>{{user.name}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.age}}</p>
+    
+</div>
+
+<div>
     <h1>Listado de productos:</h1>
 </div>
 
 <div>
     {{#each products.docs}}
         <div>
-            <h2>{{this}}</h2>
-            <p>Descripcion:{{description}}</p>
-            <p>code: {{'code'}}</p>
-            <p>Estado: {{"this.stats"}}</p>
-            <p>Stock:{{this.stock}}</p>
-            <p>Price:{{this.price}}</p>
-            <p>Id:</p>
+            <h2>==={{this.title}}===</h2>
+            <p>Description: {{this.description}}</p>
+            <p>code: {{this.code}}</p>
+            <p>Estado: {{this.stats}}</p>
+            <p>Stock: {{this.stock}}</p>
+            <p>Price: {{this.price}}</p>
         </div>
     {{/each}}
 </div>
 
+<div>
+    <a href="/api/sessions/logout"><button>Salir</button></a>
+</div>
 
 
 <!-- 

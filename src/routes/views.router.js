@@ -14,15 +14,36 @@ const router = Router();
 
 //const productManager = new ProductManager(path.join(dirname, '../productos.json'));
 
+const publicAccess = (req, res, next) => {
+    //if (req.session.user) return res.redirect('/');
+    next();
+}
 
+const privateAccess = (req, res, next) => {
+    //if (!req.session.user) return res.redirect('/login');
+    next();
+}
 
+router.get('/register', publicAccess, (req, res) => {
+    res.render('register');
+});
 
+router.get('/login', publicAccess, (req, res) => {
+    res.render('login');
+});
+
+router.get('/', privateAccess, (req, res) => {
+    res.redirect('/login');
+});
+
+/*
 router.get('/', async(req, res) => {
     const products = await productManager.getAll()
     console.log(products)
     res.render('products', { products });
     //res.render('index',{product : product});
 });
+
 
 router.get('/cart', async(req, res) => {
     console.log('k')
@@ -31,7 +52,7 @@ router.get('/cart', async(req, res) => {
     res.render('prods',{carts});
     //res.render('index',{product : product});
 });
-
+*/
 
 export default router
 
