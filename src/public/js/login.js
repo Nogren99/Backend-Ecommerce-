@@ -19,4 +19,11 @@ form.addEventListener('submit', e => {
             window.location.replace('/');
         }
     })
+    .catch(error => {
+        console.log(error);
+        // Muestra el error en la página
+        const errorMessage = document.createElement('p');
+        errorMessage.textContent = 'Error registering user.';
+        form.appendChild(errorMessage);
+      });
 });

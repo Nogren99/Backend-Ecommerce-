@@ -4,8 +4,11 @@ import { userModel } from "../dao/models/users.model.js";
 const router=Router()
 
 router.post('/register', async(req, res) =>{
-    const { first_name, last_name, email, age, password } = req.body;
+    const { first_name, last_name, email, age, password} = req.body;
 
+    console.log(req.body)
+
+    console.log(first_name, last_name, email, age, password)
     try {
         const exists = await userModel.findOne({ email });
         if (exists) return res.status(400).send({ status: 'error', error: 'user already exists' });
@@ -32,6 +35,7 @@ router.post('/register', async(req, res) =>{
 
 router.post('/login', async(req, res) =>{
     const { email, password } = req.body;
+    console.log(req.body)
 
     try {
         
@@ -48,6 +52,7 @@ router.post('/login', async(req, res) =>{
             age: user.age
         }
         console.log(req.session.user.name)
+        console.log("funciona")
 
         res.redirect('/api/products')
         //res.send({ status: 'success', message: 'login success' });

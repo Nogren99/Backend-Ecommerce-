@@ -9,8 +9,7 @@ const userSchema = new mongoose.Schema({
     last_name: String,
     email: String,
     age: Number,
-    password: String,
-    role:String
+    password: String
 });
 
 export const userModel = mongoose.model(userCollection, userSchema);
