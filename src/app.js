@@ -8,6 +8,7 @@ import __dirname from './utils.js';
 import MongoStore from 'connect-mongo';
 import initializePassport from './config/passport.config.js';
 import passport from 'passport';
+import productsRouter from './routes/products.router.js'
 
 const app = express();
 
@@ -37,12 +38,20 @@ initializePassport();
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.engine('handlebars', handlebars.engine());
+app.engine('handlebars', handlebars.engine({
+  defaultLayout: 'main',
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+  },
+}));
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'handlebars');
 
 app.use('/', viewsRouter);
+app.use('/api/products',productsRouter);
 app.use('/api/sessions', sessionsRouter);
+app.use('/api/auth', sessionsRouter);
 
 app.listen(8080);
 
@@ -69,8 +78,7 @@ app.listen(8080);
 
 
 /*
-import express from 'express';
-import handlebars from 'express-handlebars';
+
 import productsRouter from './routes/products.router.js'
 import cartRouter from './routes/cart.router.js'
 import __dirname from './utils.js';
@@ -79,10 +87,8 @@ import realTimeRouter from './routes/realTime.router.js'
 import { Server } from 'socket.io';
 import ProductManager from './ProductManager.js';
 import path from 'path'
-import mongoose from 'mongoose';
 import { cartModel } from './dao/models/carts.model.js';
 import { productModel } from './dao/models/products.model.js';
-import session from 'express-session';
 import sessionsRouter from './routes/sessions.router.js'
 import MongoStore from 'connect-mongo';
 import initializePassport from './config/passport.config.js';

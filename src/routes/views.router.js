@@ -24,6 +24,10 @@ const privateAccess = (req, res, next) => {
     next();
 }
 
+router.get('/githublogin', publicAccess, (req, res) => {
+    res.render('githublogin');
+});
+
 router.get('/register', publicAccess, (req, res) => {
     res.render('register');
 });

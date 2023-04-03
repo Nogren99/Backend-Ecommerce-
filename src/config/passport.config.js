@@ -2,6 +2,7 @@ import passport from "passport";
 import local from "passport-local"
 import { userModel } from "../dao/models/users.model.js";
 import { createHash,isValidPassword } from "../utils.js";
+import GitHubStrategy from 'passport-github2';
 
 const LocalStrategy = local.Strategy;
 
@@ -53,6 +54,34 @@ const initializePassport = () => {
             return done(`Error al loguear usuario ${error}`);
         }
     }));
+
+    passport.use('github', new GitHubStrategy({
+        clientID: 'Iv1.d13c85af998faad9',
+        clientSecret: '0b988a3a05ef2eca7117f8983723103318488bb2',
+        callbackURL: 'http://localhost:8080/api/auth/github-callback'
+    }, async(accessToken, refreshToken, profile, done) => {
+        try {
+            console.log(profile);
+            const user = await userModel.findOne({ email: profile._json.email });
+            if (!user) {
+                const newUser = {
+                    first_name: profile._json.name,
+                    last_name: '',
+                    age: 18,
+                    email: profile._json.email,
+                    password: ''
+                };
+
+                const result = await userModel.create(newUser);
+
+                done(null, result);
+            } else {
+                done(null, user);
+            }
+        } catch (error) {
+            done(error)
+        }
+    }))
 
     passport.serializeUser((user, done) => {
         done(null, user._id);

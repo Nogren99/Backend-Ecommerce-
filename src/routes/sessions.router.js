@@ -6,6 +6,17 @@ import session from 'express-session';
 
 const router=Router()
 
+router.get('/github',
+    passport.authenticate('github', { scope: ['user:email'] }),
+    async (req, res) => {
+        res.send({ status: 'sucess', message: 'user registered' });
+    });
+
+router.get('/github-callback', passport.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
+    req.session.user = req.user;
+    res.redirect('/api/products');
+})
+
 
 router.post('/register', passport.authenticate('register', { failureRedirect: 'fail-register' }), async (req, res) => {
     res.send({ status: 'success', message: 'user registered' })
@@ -29,10 +40,11 @@ router.post('/login', passport.authenticate('login', { failureRedirect: 'fail-lo
         email: req.user.email,
     }
     console.log( req.session.user)
+    console.log("Login exitoso!")
 
-    
+
     res.send({ status: 'success', message: 'login success' });
-    //res.redirect('/api/products')
+    //res.redirect('/api/products') no funciona
 });
 
 router.get('/fail-login', async (req, res) => {
