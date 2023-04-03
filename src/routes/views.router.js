@@ -32,6 +32,10 @@ router.get('/login', publicAccess, (req, res) => {
     res.render('login');
 });
 
+router.get('/reset', publicAccess, (req, res) => {
+    res.render('reset');
+});
+
 router.get('/', privateAccess, (req, res) => {
     res.redirect('/login');
 });
