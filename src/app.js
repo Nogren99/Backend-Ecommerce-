@@ -8,7 +8,8 @@ import __dirname from './utils.js';
 import MongoStore from 'connect-mongo';
 import initializePassport from './config/passport.config.js';
 import passport from 'passport';
-import productsRouter from './routes/products.router.js'
+import productsRouter from './routes/products.router.js';
+import config from "./config.js";
 
 const app = express();
 
@@ -55,7 +56,7 @@ app.use('/api/auth', sessionsRouter);
 
 app.listen(8080);
 
-
+//app.listen(Number(config.port), () => console.log(`Server running on port ${config.port}`))
 
 
 
