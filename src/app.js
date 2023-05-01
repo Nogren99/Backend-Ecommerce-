@@ -24,11 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/public`));
 
 app.use(session({
-    store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://nogren23:Zvfs1X97w9j42Hny@cluster0.tw7ltq8.mongodb.net/test?retryWrites=true&w=majority',
-        mongoOptions: { useNewUrlParser: true },
-        ttl: 3600
-    }),
+
     secret: 'secretCoder',
     resave: true,
     saveUninitialized: true
