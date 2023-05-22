@@ -1,6 +1,6 @@
 import {Router} from 'express';
-import Prods from '../dao/dbManagers/products.js'
-import Carts from '../dao/dbManagers/carts.js'
+import Prods from '../dao/mongo/products.mongo.js'
+import Carts from '../dao/mongo/carts.mongo.js'
 
 const productManager = new Prods();
 const cartManager = new Carts();

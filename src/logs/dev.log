@@ -1,0 +1,72 @@
+{"level":"http","message":"GET en /loggerTest - 2023-05-22T21:15:32.107Z"}
+{"level":"info","message":"GET en /loggerTest - 2023-05-22T21:15:32.109Z"}
+{"level":"fatal","message":"GET en /loggerTest - 2023-05-22T21:15:32.109Z"}
+{"level":"fatal","message":"Prueba fatal"}
+{"level":"error","message":"Prueba error"}
+{"level":"warning","message":"Prueba warning"}
+{"level":"info","message":"Prueba info"}
+{"level":"http","message":"Prueba http"}
+{"level":"debug","message":"Prueba debug"}
+{"level":"http","message":"GET en /loggerTest - 2023-05-22T21:15:36.612Z"}
+{"level":"info","message":"GET en /loggerTest - 2023-05-22T21:15:36.612Z"}
+{"level":"fatal","message":"GET en /loggerTest - 2023-05-22T21:15:36.613Z"}
+{"level":"fatal","message":"Prueba fatal"}
+{"level":"error","message":"Prueba error"}
+{"level":"warning","message":"Prueba warning"}
+{"level":"info","message":"Prueba info"}
+{"level":"http","message":"Prueba http"}
+{"level":"debug","message":"Prueba debug"}
+{"level":"http","message":"GET en /loggerTest - 2023-05-22T21:15:36.855Z"}
+{"level":"info","message":"GET en /loggerTest - 2023-05-22T21:15:36.855Z"}
+{"level":"fatal","message":"GET en /loggerTest - 2023-05-22T21:15:36.855Z"}
+{"level":"fatal","message":"Prueba fatal"}
+{"level":"error","message":"Prueba error"}
+{"level":"warning","message":"Prueba warning"}
+{"level":"info","message":"Prueba info"}
+{"level":"http","message":"Prueba http"}
+{"level":"debug","message":"Prueba debug"}
+{"level":"http","message":"GET en /loggerTest - 2023-05-22T21:15:37.100Z"}
+{"level":"info","message":"GET en /loggerTest - 2023-05-22T21:15:37.101Z"}
+{"level":"fatal","message":"GET en /loggerTest - 2023-05-22T21:15:37.101Z"}
+{"level":"fatal","message":"Prueba fatal"}
+{"level":"error","message":"Prueba error"}
+{"level":"warning","message":"Prueba warning"}
+{"level":"info","message":"Prueba info"}
+{"level":"http","message":"Prueba http"}
+{"level":"debug","message":"Prueba debug"}
+{"level":"http","message":"GET en /loggerTest - 2023-05-22T21:15:37.328Z"}
+{"level":"info","message":"GET en /loggerTest - 2023-05-22T21:15:37.329Z"}
+{"level":"fatal","message":"GET en /loggerTest - 2023-05-22T21:15:37.329Z"}
+{"level":"fatal","message":"Prueba fatal"}
+{"level":"error","message":"Prueba error"}
+{"level":"warning","message":"Prueba warning"}
+{"level":"info","message":"Prueba info"}
+{"level":"http","message":"Prueba http"}
+{"level":"debug","message":"Prueba debug"}
+{"level":"http","message":"GET en /loggerTest - 2023-05-22T21:16:11.129Z"}
+{"level":"info","message":"GET en /loggerTest - 2023-05-22T21:16:11.130Z"}
+{"level":"fatal","message":"GET en /loggerTest - 2023-05-22T21:16:11.130Z"}
+{"level":"fatal","message":"Prueba fatal"}
+{"level":"error","message":"Prueba error"}
+{"level":"warning","message":"Prueba warning"}
+{"level":"info","message":"Prueba info"}
+{"level":"http","message":"Prueba http"}
+{"level":"debug","message":"Prueba debug"}
+[34mhttp[39m: [34mGET en /loggerTest - 2023-05-22T21:16:22.037Z[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-22T21:16:22.039Z[39m
+[31mfatal[39m: [31mGET en /loggerTest - 2023-05-22T21:16:22.040Z[39m
+[31mfatal[39m: [31mPrueba fatal[39m
+[31merror[39m: [31mPrueba error[39m
+[33mwarning[39m: [33mPrueba warning[39m
+[32minfo[39m: [32mPrueba info[39m
+[34mhttp[39m: [34mPrueba http[39m
+[34mdebug[39m: [34mPrueba debug[39m
+[34mhttp[39m: [34mGET en /loggerTest - 2023-05-22T21:18:46.227Z[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-22T21:18:46.229Z[39m
+[31mfatal[39m: [31mGET en /loggerTest - 2023-05-22T21:18:46.230Z[39m
+[31mfatal[39m: [31mPrueba fatal[39m
+[31merror[39m: [31mPrueba error[39m
+[33mwarning[39m: [33mPrueba warning[39m
+[32minfo[39m: [32mPrueba info[39m
+[34mhttp[39m: [34mPrueba http[39m
+[34mdebug[39m: [34mPrueba debug[39m

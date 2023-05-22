@@ -1,0 +1,28 @@
+{"level":"info","message":"GET en /css/ - 2023-05-22T20:17:53.218Z"}
+{"level":"info","message":"GET en /css/ - 2023-05-22T20:17:53.437Z"}
+{"level":"info","message":"GET en /css/ - 2023-05-22T20:17:55.531Z"}
+{"level":"info","message":"GET en /loggerTest - 2023-05-22T20:18:01.899Z"}
+{"level":"info","message":"GET en /loggerTest - 2023-05-22T20:19:33.257Z"}
+{"level":"info","message":"GET en /loggerTest - 2023-05-22T20:39:29.404Z"}
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-22T20:43:42.442Z[39m
+[32minfo[39m: [32mGET en /css/ - 2023-05-22T20:45:31.234Z[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-22T21:11:16.848Z[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-22T21:14:03.461Z[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-22T21:14:30.351Z[39m
+[31mfatal[39m: [31mGET en /loggerTest - 2023-05-22T21:14:30.352Z[39m
+[31mfatal[39m: [31mPrueba fatal[39m
+[31merror[39m: [31mPrueba error[39m
+[33mwarning[39m: [33mPrueba warning[39m
+[32minfo[39m: [32mPrueba info[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-22T21:16:37.507Z[39m
+[31mfatal[39m: [31mGET en /loggerTest - 2023-05-22T21:16:37.508Z[39m
+[31mfatal[39m: [31mPrueba fatal[39m
+[31merror[39m: [31mPrueba error[39m
+[33mwarning[39m: [33mPrueba warning[39m
+[32minfo[39m: [32mPrueba info[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-22T21:18:22.405Z[39m
+[31mfatal[39m: [31mGET en /loggerTest - 2023-05-22T21:18:22.406Z[39m
+[31mfatal[39m: [31mPrueba fatal[39m
+[31merror[39m: [31mPrueba error[39m
+[33mwarning[39m: [33mPrueba warning[39m
+[32minfo[39m: [32mPrueba info[39m

@@ -34,7 +34,8 @@
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "socket.io": "^4.6.1",
-    "view.js": "^4.1.0"
+    "view.js": "^4.1.0",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "handlebars": "^4.7.7"

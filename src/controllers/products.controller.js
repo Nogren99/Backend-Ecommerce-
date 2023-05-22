@@ -1,5 +1,5 @@
-import { productModel } from '../dao/models/products.model.js';
-import Products from '../dao/dbManagers/products.js'
+import { productModel } from '../dao/mongo/models/products.model.js';
+import Products from '../dao/mongo/products.mongo.js'
 const productManager = new Products();
 
 const getProducts =async (req, res) =>{

@@ -1,4 +1,4 @@
-import { userModel } from "../dao/models/users.model.js";
+import { userModel } from "../dao/mongo/models/users.model.js";
 import { createHash } from '../utils.js'
 import session from 'express-session';
 

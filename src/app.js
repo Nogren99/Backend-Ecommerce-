@@ -10,6 +10,7 @@ import initializePassport from './config/passport.config.js';
 import passport from 'passport';
 import productsRouter from './routes/products.router.js';
 import config from "./config.js";
+import { addLogger } from './utils/logger.js';
 
 const app = express();
 
@@ -50,9 +51,29 @@ app.use('/api/products',productsRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use('/api/auth', sessionsRouter);
 
-app.listen(8080);
+app.use(addLogger);
+app.get('/loggerTest', (req, res) => {
+  //Loguear a nivel consola
+  // req.logger.error('Prueba error');
+  // req.logger.warn('Prueba warn');
+  // req.logger.info('Prueba info');
+  // req.logger.debug('Prueba debug');
+  // req.logger.silly('Prueba silly');
 
-//app.listen(Number(config.port), () => console.log(`Server running on port ${config.port}`))
+  //Mensajes niveles custom
+  req.logger.fatal('Prueba fatal');
+  req.logger.error('Prueba error');
+  req.logger.warning('Prueba warning');
+  req.logger.info('Prueba info');
+  req.logger.http('Prueba http');
+  req.logger.debug('Prueba debug');
+  
+  res.send({ message: 'Prueba logger' });
+});
+
+//app.listen(8080);
+
+app.listen(Number(config.port), () => console.log(`Server running on port ${config.port}`))
 
 
 
