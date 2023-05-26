@@ -26,3 +26,23 @@
 [31merror[39m: [31mPrueba error[39m
 [33mwarning[39m: [33mPrueba warning[39m
 [32minfo[39m: [32mPrueba info[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-26T20:52:06.024Z[39m
+[31mfatal[39m: [31mGET en /loggerTest - 2023-05-26T20:52:06.026Z[39m
+[31mfatal[39m: [31mPrueba fatal[39m
+[31merror[39m: [31mPrueba error[39m
+[33mwarning[39m: [33mPrueba warning[39m
+[32minfo[39m: [32mPrueba info[39m
+[32minfo[39m: [32mGET en /favicon.ico - 2023-05-26T20:52:06.206Z[39m
+[31mfatal[39m: [31mGET en /favicon.ico - 2023-05-26T20:52:06.206Z[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-26T20:52:08.118Z[39m
+[31mfatal[39m: [31mGET en /loggerTest - 2023-05-26T20:52:08.119Z[39m
+[31mfatal[39m: [31mPrueba fatal[39m
+[31merror[39m: [31mPrueba error[39m
+[33mwarning[39m: [33mPrueba warning[39m
+[32minfo[39m: [32mPrueba info[39m
+[32minfo[39m: [32mGET en /loggerTest - 2023-05-26T20:52:50.398Z[39m
+[31mfatal[39m: [31mGET en /loggerTest - 2023-05-26T20:52:50.398Z[39m
+[31mfatal[39m: [31mPrueba fatal[39m
+[31merror[39m: [31mPrueba error[39m
+[33mwarning[39m: [33mPrueba warning[39m
+[32minfo[39m: [32mPrueba info[39m
