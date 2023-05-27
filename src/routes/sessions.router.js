@@ -1,6 +1,5 @@
 import { Router } from "express";
 import passport from 'passport';
-import session from 'express-session';
 import { userRegistered, githubCallback, registerFail, login, failLogin, reset, logout } from "../controllers/sessions.controller.js";
 
 const router=Router()

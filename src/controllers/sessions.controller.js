@@ -1,6 +1,5 @@
 import { userModel } from "../dao/mongo/models/users.model.js";
 import { createHash } from '../utils.js'
-import session from 'express-session';
 
 const userRegistered = async (req, res) => {
     res.send({ status: 'sucess', message: 'user registered' });
@@ -30,9 +29,7 @@ const login = async (req, res) => {
     console.log( req.session.user)
     console.log("Login exitoso!")
 
-
-    res.send({ status: 'success', message: 'login success' });
-    //res.redirect('/api/products') no funciona
+    res.status(200).send({ status: 'success', message: 'login success' });
 }
 
 const reset = async (req, res) => {
